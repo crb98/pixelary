@@ -8,18 +8,36 @@
 <body>
     <header>PixelAry</header>
     <div id="canvas"></div>
-    <div id="palette">Palette</div>
-    <div id="menu">Menu</div>
-</body>
-</html>
-
+    <div id="palette">
+        <div class="colors">
+            <div id="red"></div>
+            <div id="green"></div>
+            <div id="blue"></div>
+            <div id="yellow"></div>
+            <div id="cyan"></div>
+            <div id="magenta"></div>
+            <div id="black"></div>
+            <div id="white"></div>
+        </div>
+        <div id="brush" class="brushes">🖌 brush</div>
+        <div id="eraser" class="brushes">⌫ eraser</div>
+    </div>
+    <div id="menu">
+        <div id="prompt">Prompt</div>
+        <div id="timer">Timer</div>
+        <div id="menu-buttons">
+            <button id="clear">Clear Canvas</button>
+            <button id="share">Share Canvas</button>
+        </div>
+    </div>
     <script>
         const canvas = document.querySelector("#canvas");
-        const size = 25;
 
-        for (let i = 0; i < size * size; i += 1) {
+        for (let i = 0; i < 25 * 25; i += 1) {
             const pixel = document.createElement("div");
             pixel.className = "pixel";
             canvas.append(pixel);
         }
     </script>
+</body>
+</html>

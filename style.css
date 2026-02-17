@@ -35,15 +35,93 @@ header {
 #palette {
     display: flex;
     justify-content: center;
-    margin-top: 1em;
+    align-items: center;
+    gap: 0.5em;
+    flex-wrap: wrap;
+    margin: 1em;
+    padding: 0.5em;
     width: 100%;
-    background-color: #e2e2e2
+    height: auto;
+    background-color: #e2e2e2;
 
 }
 
 #menu {
     display: flex;
     justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5em;
     margin-top: 1em;
     width: 100%;
+}
+
+#menu-buttons {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 0.5em;
+}
+
+#clear, #share {
+    padding: 0.5em 1em;
+    border: 1px solid #000;
+    cursor: pointer;
+    font-size: 0.75em;
+}
+
+.colors {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 0.5em;
+    flex-wrap: wrap;
+}
+
+.colors > div {
+    width: 2em;
+    height: 2em;
+    border: 1px solid #000;
+    cursor: pointer;
+}
+
+#red {
+    background-color: #b03636;
+}
+
+#green {
+    background-color: #36b036;
+}
+
+#blue {
+    background-color: #2f5fb3;
+}
+
+#yellow {
+    background-color: #e0c24a;
+}
+
+#cyan {
+    background-color: #34b7b7;
+}
+
+#magenta {
+    background-color: #b74aa6;
+}
+
+#black {
+    background-color: #111;
+}   
+
+#white {
+    background-color: #fff;
+}
+
+.brushes {
+    width: auto;
+    height: 2em;
+    padding: 0.25em;
+    margin: 0 0.5em;
+    border: 1px solid #000;
+    cursor: pointer;
 }
