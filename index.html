@@ -9,7 +9,7 @@
     <header>PixelAry</header>
     <div id="canvas"></div>
     <div id="palette">
-        <div class="colors">
+        <div class="colours">
             <div id="red"></div>
             <div id="green"></div>
             <div id="blue"></div>
@@ -19,25 +19,52 @@
             <div id="black"></div>
             <div id="white"></div>
         </div>
-        <div id="brush" class="brushes">🖌 brush</div>
-        <div id="eraser" class="brushes">⌫ eraser</div>
     </div>
     <div id="menu">
         <div id="prompt">Prompt</div>
         <div id="timer">Timer</div>
-        <div id="menu-buttons">
-            <button id="clear">Clear Canvas</button>
-            <button id="share">Share Canvas</button>
-        </div>
     </div>
     <script>
         const canvas = document.querySelector("#canvas");
+        const palette = document.querySelector("#palette");
+        const defaultSwatch = document.querySelector("#black");
+        let currentColour = getComputedStyle(defaultSwatch).backgroundColor;
+        let selectedSwatch = defaultSwatch;
+        selectedSwatch.classList.add("is-selected");
 
         for (let i = 0; i < 25 * 25; i += 1) {
             const pixel = document.createElement("div");
             pixel.className = "pixel";
             canvas.append(pixel);
         }
+
+        function paletteClick(event) {
+            const swatch = event.target.closest(".colours > div");
+            if (!swatch) {
+                return;
+            }
+
+            if (selectedSwatch) {
+                selectedSwatch.classList.remove("is-selected");
+            }
+
+            selectedSwatch = swatch;
+            selectedSwatch.classList.add("is-selected");
+            currentColour = getComputedStyle(swatch).backgroundColor;
+        }
+
+        function canvasClick(event) {
+            const pixel = event.target.closest(".pixel");
+            if (!pixel) {
+                return;
+            }
+
+            pixel.style.backgroundColor = currentColour;
+        }
+
+        palette.addEventListener("click", paletteClick);
+        canvas.addEventListener("click", canvasClick);
     </script>
+
 </body>
 </html>
