@@ -1,9 +1,9 @@
 ﻿:root {
-    --colour-page-bg: #f0f0f0;
-    --colour-text: #000;
+    --colour-page-bg: #c0a1da;
+    --colour-text: #362841;
     --colour-canvas-bg: #fff;
     --colour-pixel-border: #ddd;
-    --colour-palette-bg: #e2e2e2;
+    --colour-palette-bg: #9271ad;
     --colour-swatch-border: #000;
     --colour-red: #f2a3a3;
     --colour-green: #a8e6a3;
@@ -29,7 +29,9 @@ body {
 header {
     text-align: center;
     width: 100%;
-    margin-bottom: 1em;
+    margin-bottom: 0.5em;
+    color: var(--colour-text);
+    font-size: 2em;
 }
 
 #canvas {
@@ -73,7 +75,13 @@ header {
     width: 100%;
 }
 
-#clear, #share {
+#menu-buttons {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+#menu-buttons > button {
     padding: 0.5em 1em;
     border: 1px solid var(--colour-text);
     cursor: pointer;
