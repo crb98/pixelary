@@ -1,6 +1,7 @@
 {
   "type": "module",
   "dependencies": {
+    "better-sqlite3": "^12.8.0",
     "express": "^4.18.0"
   },
   "devDependencies": {
@@ -13,5 +14,9 @@
     "env": {
       "browser": true
     }
+  },
+  "scripts": {
+    "db:init": "node scripts/init-db.js",
+    "start": "node svr.js"
   }
 }
